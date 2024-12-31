@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Wishes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        #animation {
+            display: none;
+            animation: fadeIn 2s ease-in-out forwards, bounce 1s infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter your name to get a New Year wish!</h1>
+    <input type="text" id="nameInput" placeholder="Your Name" />
+    <button onclick="showWish()">Get Your Wish</button>
+    <div id="animation">
+        <h1>🎉 Happy New Year, <span id="userName"></span>! 🎉</h1>
+        <p>Wishing you a joyful year ahead! - Ishaan</p>
+        <button onclick="sayHi()">Say Hi</button>
+    </div>
+
+    <script>
+        function showWish() {
+            const name = document.getElementById("nameInput").value.trim();
+            if (name) {
+                document.getElementById("userName").innerText = name;
+                document.getElementById("animation").style.display = "block";
+            } else {
+                alert("Please enter your name!");
+            }
+        }
+
+        function sayHi() {
+            alert("Your are hacked!");
+        }
+    </script>
+</body>
+</html>
